@@ -22,13 +22,13 @@
 </template>
 
 <template name='todo'>
-	{{#if tag}} <!-- I could probably make this cleaner -->
-	{{#if tagged}}
-		{{> todocontent}}
+	{{#if tag}} <!-- if a tag is being filtered --> 
+	{{#if tagged}} <!-- if this todo has the tag being filtered -->
+		{{> todocontent}} <!-- display the todo -->
 	{{/if}}
 	{{/if}}
 	{{#unless tag}}
-		{{> todocontent}}
+		{{> todocontent}} <!-- if no tag is being searched for, display all todos -->
 	{{/unless}}
 </template>
 
