@@ -1,0 +1,10 @@
+/* CSS declarations go here */
+.tag {
+	color: blue;
+	margin-left: 15px;
+}
+
+.name {
+	color: red;
+	margin-right: 15px;
+}

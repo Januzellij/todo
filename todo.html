@@ -1,0 +1,49 @@
+<head>
+  <title>todo</title>
+</head>
+
+<body>
+  {{loginButtons}}
+  {{> forms}}
+  {{> allTodos}}
+</body>
+
+<template name='forms'>
+	<input id='tag' type=text value=tag>
+	<input id='search' type=button value=Search>
+	<input id='todo' type=text value=New todo>
+	<input id='add' type=button value=Add>
+</template>
+
+<template name='allTodos'>
+	{{#each todos}}
+	{{> todo}}
+	{{/each}}
+</template>
+
+<template name='todo'>
+	{{#if tag}} <!-- I could probably make this cleaner -->
+	{{#if tagged}}
+		{{> todocontent}}
+	{{/if}}
+	{{/if}}
+	{{#unless tag}}
+		{{> todocontent}}
+	{{/unless}}
+</template>
+
+<template name='todocontent'>
+	<div class='todo' id='{{name}}'>
+		<p class=name>{{name}}</p>
+		<ul class=tags>
+		{{#each tags}}
+			<li class=tag>{{tag}}</li>
+		{{/each}}
+		</ul>
+	</div>
+	{{#if addingtag}}
+		<input id='tagtext' type=text value=New Tag>
+	{{else}}
+		<input id='tagbtn' type=button value=Add Tag>
+	{{/if}}
+</template>
