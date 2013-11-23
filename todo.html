@@ -26,10 +26,9 @@
 	{{#if tagged}} <!-- if this todo has the tag being filtered -->
 		{{> todocontent}} <!-- display the todo -->
 	{{/if}}
-	{{/if}}
-	{{#unless tag}}
+	{{else}}
 		{{> todocontent}} <!-- if no tag is being searched for, display all todos -->
-	{{/unless}}
+	{{/if}}
 </template>
 
 <template name='todocontent'>
